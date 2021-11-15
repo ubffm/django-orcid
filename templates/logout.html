@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static compress%}
+
+{% block extra_css %}
+    {% compress css%}
+        <link type="text/x-scss" href="{% static 'scss/account.scss' %}" rel="stylesheet" media="screen">
+    {% endcompress css%}
+{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-dark bg-dark" aria-label="breadcrumb">
+        <div class="container container-fluid text-light fs-5">
+            <ol class="breadcrumb mb-0 mt-1 align-middle">
+                <li class="breadcrumb-item"><a class="text-light text-decoration-none" href="/">Home</a></li> 
+                <li class="breadcrumb-item active">Logout</li>
+            </ol>
+        </div>
+</nav>
+<div class="container pt-5 pb-5 content-container login-container">
+    <div class="row">
+        <div class="text-box">
+            <div id="col1" class="col-12 pt-5 pb-5 text-center">
+                <h1 class="text-center">Logout</h1>
+                
+                <p class="fs-5">You have successfully logged off</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

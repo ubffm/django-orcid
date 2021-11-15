@@ -1,0 +1,42 @@
+{% load compress %}
+{% load static %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            Login successfull
+        </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {# Global stylesheets #}
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="col-12">
+                <h1 class="pt-5">You successfully logged in</h1>
+                <p class="pt-5">
+                    Thank you for loging in <strong>{{request.user.first_name}} {{request.user.last_name}}</strong>.<br>
+                    You can close this window now and reload the page from whence you logged in. <br>
+                </p>
+                <input type='button' id='btn' value='Close'/>
+            </div>
+        </div>
+
+        {# Global javascript #}
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#btn').click(function () {
+                    window.opener.location.reload(true);
+                    window.close();
+                });
+            });
+        </script>
+    </body>
+</html>

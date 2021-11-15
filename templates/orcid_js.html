@@ -1,0 +1,9 @@
+<script type="text/javascript">
+	var oauthWindow;
+                
+	function openORCID() {
+
+    	var oauthWindow = window.open("{{authorize_url}}?client_id={{client_id}}&response_type=code&scope={{requested_scope}}&show_login=false&redirect_uri={{redirect_uri}}", "_blank", "toolbar=no, scrollbars=yes, width=500, height=600, top=500, left=500");
+
+	}
+</script>

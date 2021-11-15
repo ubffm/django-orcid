@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container content-container">
+	<form id="delete-account" action="{% url 'delete_account'%}" method="POST">
+		{% csrf_token %}
+		<div class="form-row">
+			<div class="col">
+				<input class="form-control" id="orcid" name="orcid" type="text" placeholder="Please enter your ORCID to confirm deletion" aria-label="orcid">
+			</div>
+		</div>
+		<div class="form-row">
+			&nbsp;
+		</div>
+		<div class="form-row">
+			<div class="col">
+		        <button form="delete-account" class="btn btn-primary" type="submit">Delete Account</button>
+		    </div>
+		</div>
+	</form>
+</div>
+
+{% endblock %}

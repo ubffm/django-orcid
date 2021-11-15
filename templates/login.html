@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% load static compress%}
+
+{% block extra_css %}
+    {% compress css%}
+        <link type="text/x-scss" href="{% static 'scss/account.scss' %}" rel="stylesheet" media="screen">
+    {% endcompress css%}
+{% endblock %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-dark bg-dark" aria-label="breadcrumb">
+    <div class="container container-fluid text-light fs-5">
+        <ol class="breadcrumb mb-0 mt-1 align-middle">
+            <li class="breadcrumb-item"><a class="text-light text-decoration-none" href="/">Home</a></li> 
+            <li class="breadcrumb-item active">Login</li>
+        </ol>
+    </div>
+</nav>
+<div class="container content-container login-container pt-5 pb-5">
+    <div class="row">
+        <div class="text-box">
+            <div id="col1" class="col-12 pt-5 pb-5 text-center">
+                <h1 class="text-center pb-2">Login</h1>
+                
+                <h3 class="pb-2">Please click the button to log in</h3>            
+                
+                <button id="connect-orcid-button" onclick="openORCID()"><img src="https://orcid.org/sites/default/files/images/orcid_24x24.png" width="24" height="24" alt="ORCID iD icon"/>Login or register with your ORCID iD</button>
+        
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
