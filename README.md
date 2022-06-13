@@ -3,7 +3,7 @@ A Django App handling ORCID.org OAuth Authentication. Extends the Django User mo
 
 ## Installation
 
-Copy the folder 'django-orcid' to your project directory and add the following to your ```INSTALLED APPS``` statement.
+Copy the folder 'django_orcid' to your project directory and add the following to your ```INSTALLED APPS``` statement.
 
 ```python
 INSTALLED_APPS = [
