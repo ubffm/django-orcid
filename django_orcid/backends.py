@@ -3,18 +3,18 @@
 
 import requests
 import random
-import orcidaccount.settings as settings
+import django_orcid.settings as settings
 import json
 from django.core.mail import send_mail
 from datetime import datetime
 from hashlib import sha3_256
-
+from django.core.exceptions import PermissionDenied
 from http import HTTPStatus
 from django.contrib.auth.backends import BaseBackend
 
 from django.contrib.auth.models import User
 
-from orcidaccount.models import OrcidUser
+from django_orcid.models import OrcidUser
 
 
 class OrcidBackend(BaseBackend):
@@ -78,7 +78,7 @@ class OrcidBackend(BaseBackend):
         if response.status_code == HTTPStatus.OK:
             return response.json()
         else:
-            raise Exception('Something went wrong during communication with orcid. Please close this window and try again later.')
+            raise PermissionDenied()
 
     def orcid_profile_request(self, orcid, token):
         headers = {'Accept': 'application/json', 'Authorization': f'Bearer {token}'}

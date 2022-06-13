@@ -8,10 +8,21 @@ Copy the folder 'django-orcid' to your project directory and add the following t
 ```python
 INSTALLED_APPS = [
     ...
-    'django-orcid',
+    'django_orcid',
     ...
 ]
 ```
+
+You also need to add the authentication backend to the ```AUTHENTICATION_BACKENDS``` like so:
+
+```python
+AUTHENTICATION_BACKENDS = [
+    'django_orcid.backends.OrcidBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+```
+
+Lastly you need to run ```manage.py makemigrations``` to generate all necessary migrations depending on your database.
 
 ## Configuration
 
@@ -49,6 +60,7 @@ Django-Orcid is pretty self contained, but does need some dependencies nonethele
 
 - [Django-Compressor](https://github.com/django-compressor/django-compressor) To facilitate SCSS rendering. This can easily be changed by reverting to regular css
 - [Django-Cryptography](https://pypi.org/project/django-cryptography/) To protect userdata, such as access tokens, refresh tokens and personal data.
+- [Python Requests](https://pypi.org/project/requests/) To facilitate communication with ORCID's servers
 
 ## Tested on
 

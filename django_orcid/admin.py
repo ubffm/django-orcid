@@ -1,5 +1,5 @@
 from django.contrib import admin
-from orcidaccount.models import OrcidUser
+from django_orcid.models import OrcidUser
 
 # Register your models here.
 admin.site.register(OrcidUser)
