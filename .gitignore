@@ -1,0 +1,7 @@
+**/__pycache__/
+.idea/
+orcid/
+venv/
+
+db.sqlite3
+manage.py
