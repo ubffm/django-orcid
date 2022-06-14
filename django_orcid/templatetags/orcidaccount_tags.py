@@ -1,6 +1,6 @@
 from django import template
 
-import orcidaccount.settings as settings
+import django_orcid.settings as settings
 
 register = template.Library()
 
