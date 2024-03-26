@@ -1,4 +1,7 @@
 # django-orcid
+
+> 🍣 Use https://docs.allauth.org/en/latest/socialaccount/providers/orcid.html instead.
+
 A Django App handling ORCID.org OAuth Authentication. Extends the Django User model and overrides frontent login.
 
 ## Installation
